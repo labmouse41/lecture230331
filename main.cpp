@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <conio.h>
 
 using namespace std;
 
@@ -19,13 +20,40 @@ int main()
 			{1,0,0,0,0,0,0,0,0,1}, 
 			{1,1,1,1,1,1,1,1,1,1} };
 
-	while (true)
+	int PlayerPosX = 1;
+	int PlayerPosY = 1;
+	bool bIsRunning = true;
+
+	while (bIsRunning)
 	{
+		//input
+		char key;
+		key = _getch();
 
+		//tick
+		if (key == 'd')
+		{
+			PlayerPosX++;
+		}
+		else if (key == 'a')
+		{
+			PlayerPosX--;
+		}
+		else if (key == 'w')
+		{
+			PlayerPosY--;
+		}
+		else if (key == 's')
+		{
+			PlayerPosY++;
+		}
+		else if (key == 'q')
+		{
+			bIsRunning = false;
+		}
 
-		int PlayerPosX = 1;
-		int PlayerPosY = 1;
-
+		//render
+		system("cls");
 		for (int Y = 0; Y < 10; Y++)
 		{
 			for (int X = 0; X < 10; X++)
@@ -45,7 +73,6 @@ int main()
 			}
 			cout << endl;
 		}
-		system("cls");
 	}
 
 	return 0;
