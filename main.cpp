@@ -19,11 +19,18 @@ int main()
 			{1,0,0,0,0,0,0,0,0,1}, 
 			{1,1,1,1,1,1,1,1,1,1} };
 
+	int PlayerPosX = 1;
+	int PlayerPosY = 1;
+
 	for (int Y = 0; Y < 10; Y++)
 	{
 		for (int X = 0; X < 10; X++)
 		{
-			if (Map[Y][X] == 1)
+			if (PlayerPosX == X && PlayerPosY == Y)
+			{
+				cout << 'P';
+			}
+			else if (Map[Y][X] == 1)
 			{
 				cout << '#';
 			}
